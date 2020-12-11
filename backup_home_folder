@@ -6,7 +6,7 @@
 backupfolder="/media/$USER/Backup_Drive/HomeFolders/"
 
 function run_backup(){
-    rsync -aH --progress --delete --exclude "DataHoard" --exclude ".pvpn-cli" --exclude "SecondDrive" --exclude "Music" --exclude ".steam" /home/$USER $backupfolder
+    rsync -aH --progress --delete --exclude "DataHoard" --exclude ".pvpn-cli" --exclude "SecondDrive" --exclude "Music" --exclude ".steam" /home/$USER $backupfolder/$HOSTNAME
 
     # Run `sync` to ensure all data is written to the drive
     echo "Finnished copying, running sync..."
