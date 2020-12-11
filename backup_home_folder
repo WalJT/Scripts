@@ -3,7 +3,7 @@
 # Backs up important files from the home folder on all of my machines
 # Excludes certain folders for reasons
 
-backupfolder="/media/$USER/Backup_Drive/HomeFolders/$HOSTNAME/"
+backupfolder="/media/$USER/Backup_Drive/HomeFolders/"
 
 function run_backup(){
     rsync -aH --progress --delete --exclude "DataHoard" --exclude ".pvpn-cli" --exclude "SecondDrive" --exclude "Music" --exclude ".steam" /home/$USER $backupfolder
