@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# `up`
+# Updates anything on my Ubuntu system that can be updated from a script
+
+set -e
+
+# Functions for multi-command operations
+function update_apt_packages() {
+   sudo apt update
+   sudo apt full-upgrade --autoremove --purge
+   sudo apt autoclean
+}
+
+function update_proton_vpn() {
+    # I have this in a virtual environment, because I think `sudo pip install` is a bad idea
+    pushd ~/Documents/python_venvs/
+    source protonvpn/bin/activate
+    pip install -U protonvpn-cli
+    popd
+}
+
+# Start doing stuff here
+sudo snap refresh
+flatpak update
+update_proton_vpn
+youtube-dl -U
+sudo freshclam # ClamAV virus / malware database
+update_apt_packages
