@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Backs up important files from the home folder on all of my machines
+# Excludes certain folders for reasons
+
+backupfolder="/media/$USER/Backup_Drive/HomeFolders/$HOSTNAME/"
+
+echo $backupfolder
+
+function run_backup(){
+    rsync -aH --progress --delete --exclude "DataHoard" --exclude "SecondDrive" --exclude "Music" --exclude ".steam" /home/$USER $backupfolder
+
+    # Run `sync` to ensure all data is written to the drive
+    echo "Finnished copying, running sync..."
+    sync
+    echo "All Done!"
+}
+
+# Ensure the backup folder exists on the right drive
+if [[ -d "$backupfolder" ]]; then
+    echo "Backup Drive Found"
+    run_backup
+    exit 0
+else
+    echo "Error: backup drive not found"
+    exit 1
+fi

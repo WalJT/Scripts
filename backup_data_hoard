@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Backup the secondary drive in my desktop PC
+
+backupfolder="/media/$USER/Backup_Drive/DataHoard/"
+
+function run_backup(){
+    rsync -aH --progress --delete /home/$USER/DataHoard/ $backupfolder
+
+    # Run `sync` to ensure all data is written to the drive
+    echo "Finished copying, running sync..."
+    sync
+    echo "All Done!"
+}
+
+# Make sure the backup drive is mounted before doing anything
+if [[ -d $backupfolder ]]; then
+    echo "Backup Drive Found"
+    run_backup
+    exit 0
+else
+    echo "Error: backup drive not found"
+    exit 1
+fi
