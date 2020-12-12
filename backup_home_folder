@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Backs up important files from the home folder on all of my machines
-# Excludes certain folders for reasons
+# Excludes certain folders because.
 
 backupfolder="/media/$USER/Backup_Drive/HomeFolders/"
 
