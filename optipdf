@@ -3,4 +3,5 @@
 # Some files may actually get larger, depending on
 # the initial level of compression
 
+# See https://tex.stackexchange.com/questions/18987/how-to-make-the-pdfs-produced-by-pdflatex-smaller
 gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile="$1"-compressed.pdf "$1"
