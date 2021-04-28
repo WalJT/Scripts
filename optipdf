@@ -1,0 +1,4 @@
+#!/bin/bash
+# Make a pdf file smaller with ghostscript
+
+gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile="$1"-compressed.pdf "$1"
