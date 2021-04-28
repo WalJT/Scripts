@@ -1,4 +1,6 @@
 #!/bin/bash
 # Make a pdf file smaller with ghostscript
+# Some files may actually get larger, depending on
+# the initial level of compression
 
 gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile="$1"-compressed.pdf "$1"
