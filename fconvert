@@ -1,0 +1,8 @@
+#!/bin/bash
+# Convert to mp4 with ffmpeg default encoder settings, preserving quality
+
+if [[ ! -d out ]]; then
+    mkdir out
+fi
+
+ffmpeg -i "$1" -q:a 0 -q:v 0 out/"$1".mp4
