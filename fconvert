@@ -1,8 +1,10 @@
 #!/bin/bash
 # Convert to mp4 with ffmpeg default encoder settings, preserving quality
 
+# Make an output folder if there isn't one already
 if [[ ! -d out ]]; then
     mkdir out
 fi
 
+# Convert or reincode with ffmpeg, putting the new file in the output folder
 ffmpeg -i "$1" -q:a 0 -q:v 0 out/"$1".mp4
