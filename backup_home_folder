@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Backs up important files from the home folder on all of my machines
-# Excludes certain folders because.
+# Backs up important files from the home folder on all of my machines.
+# Includes only certain folders to avoid backing up unneccesary application data.
 
 backupfolder="/media/$USER/Backup_Drive/HomeFolders/"
 
 function run_backup(){
-    rsync -aH --progress --delete --exclude "DataHoard" --exclude ".pvpn-cli" --exclude "SecondDrive/timeshift" --exclude "SecondDrive/Music" --exclude "Music" /home/$USER $backupfolder/$HOSTNAME
+    rsync -aH --progress --delete /home/$USER/{Documents,Downloads,Pictures,Music,Videos,bin,.config} $backupfolder
 
     # Run `sync` to ensure all data is written to the drive
     echo "Finnished copying, running sync..."
