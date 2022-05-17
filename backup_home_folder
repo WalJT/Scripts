@@ -3,7 +3,7 @@
 # Backs up important files from the home folder on all of my machines.
 # Includes only certain folders to avoid backing up unneccesary application data.
 
-backupfolder="/media/$USER/Backup_Drive/HomeFolders/"
+backupfolder="/media/$USER/Backup_Drive/HomeFolders/$HOSTNAME"
 
 function run_backup(){
     rsync -aH --progress --delete /home/$USER/{Documents,Downloads,Pictures,Music,Videos,bin,.config} $backupfolder
