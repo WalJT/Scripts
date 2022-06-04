@@ -38,8 +38,8 @@ base_size = int(input("Enter the base edge length in blocks: "))
 
 blocks = count_blocks(base_size)
 
-print("This build requires " + str(blocks) + " blocks to build.")
-print("This is approximately " + str(ceil(blocks / 64)) + " stacks.")
+print("\t-> This build requires " + str(blocks) + " blocks.")
+print("\t-> This is approximately " + str(ceil(blocks / 64)) + " stacks.")
 
 ##print(materials)
 #for material in materials.keys():
