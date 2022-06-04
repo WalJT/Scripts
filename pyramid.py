@@ -3,6 +3,8 @@
 """
 pyramid.py -- Calculates the number of blocks of cut copper, copper, and copper ingots
 required to build a pyramid given the edge length of the square base
+UPDATE: Modified to be material independant -- Now Calculates how many blocks
+and stacks of blocks are needed
 """
 
 from math import ceil
@@ -29,13 +31,18 @@ def count_blocks(edge_length: int) -> int:
 base_size = int(input("Enter the base edge length in blocks: "))
 #print(base_size)
 
-materials = dict()
-materials["Cut Copper"] = count_blocks(base_size)
-materials["Copper"] = ceil(materials["Cut Copper"] / 4)
-materials["Copper Ingots"] = materials["Copper"] * 9
+#materials = dict()
+#materials["Cut Copper"] = count_blocks(base_size)
+#materials["Copper"] = ceil(materials["Cut Copper"] / 4)
+#materials["Copper Ingots"] = materials["Copper"] * 9
 
-#print(materials)
-for material in materials.keys():
-    print("\t-> " + material + ": " + str(materials[material]))
+blocks = count_blocks(base_size)
+
+print("This build requires " + str(blocks) + " blocks to build.")
+print("This is approximately " + str(ceil(blocks / 64)) + " stacks.")
+
+##print(materials)
+#for material in materials.keys():
+    #print("\t-> " + material + ": " + str(materials[material]))
 
 #print("Blocks: " + str(count_blocks(base_size)))
