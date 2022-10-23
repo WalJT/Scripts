@@ -20,7 +20,7 @@ function Remove-Quotes {
 
 $test1 = "'file.xlsx'"
 $test2 = "'Annual Report.xls'"
-$test3 = "'Hitchikers Guiede to the Galaxy.pdf'"
+$test3 = "'Hitchikers Guide to the Galaxy.pdf'"
 
 Get-Item .
 
