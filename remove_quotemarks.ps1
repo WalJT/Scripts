@@ -10,9 +10,7 @@ A specific use case script to remove quote marks surrounding file names
 #>
 
 function Remove-Quotes {
-    param (
-        $InputFile
-    )
+    param ($InputFile)
     
     $OutputFile = $InputFile -replace "'", ""
 
