@@ -22,6 +22,8 @@ $test1 = "'file.xlsx'"
 $test2 = "'Annual Report.xls'"
 $test3 = "'Hitchikers Guiede to the Galaxy.pdf'"
 
+Get-Item .
+
 Remove-Quotes $test1
 Remove-Quotes $test2
 Remove-Quotes $test3
