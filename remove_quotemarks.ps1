@@ -12,15 +12,14 @@ function Remove-Quotes {
 
 }
 
-$test1 = "'file.text'"
+$test1 = "'file.xlsx'"
 
-Remove-Quotes $test1
+# Get listing of working directory
+$files = Get-ChildItem -Name
 
-# $test2 = "'Annual Report.xls'"
-# $test3 = "'Hitchikers Guide to the Galaxy.pdf'"
+foreach ($file in $files) {
 
-# Get-Item .
-
-# Remove-Quotes $test1
-# Remove-Quotes $test2
-# Remove-Quotes $test3
+    if ($file[-1] -eq "'") {
+        Remove-Quotes $file
+    }
+}
