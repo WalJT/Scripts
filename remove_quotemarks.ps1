@@ -1,29 +1,26 @@
 
-<#
-A specific use case script to remove quote marks surrounding file names
-
-1. [x] Write a function that removes surrounding quotemarks from a string
-2. [ ] Appy this to renaming files
-3. [ ] Use this function to loop through multiple file names
-4. [ ] Get list as input and filter to only files that have quotemarks at the end of the extension
-
-#>
+# A specific use case script to remove quote marks surrounding file names
 
 function Remove-Quotes {
     param ($InputFile)
     
-    $OutputFile = $InputFile -replace "'", ""
+    $OutputFile = $InputFile -replace "'", "" # Replace quotes with nothing
+    $outString = "Renamed $InputFile to $OutputFile"
 
-    Write-Host $InputFile
-    Write-Host $OutputFile
+    Rename-Item -Path $InputFile -NewName $OutputFile
+    Write-Host $outString
+
 }
 
-$test1 = "'file.xlsx'"
-$test2 = "'Annual Report.xls'"
-$test3 = "'Hitchikers Guide to the Galaxy.pdf'"
-
-Get-Item .
+$test1 = "'file.text'"
 
 Remove-Quotes $test1
-Remove-Quotes $test2
-Remove-Quotes $test3
+
+# $test2 = "'Annual Report.xls'"
+# $test3 = "'Hitchikers Guide to the Galaxy.pdf'"
+
+# Get-Item .
+
+# Remove-Quotes $test1
+# Remove-Quotes $test2
+# Remove-Quotes $test3
