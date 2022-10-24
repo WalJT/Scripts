@@ -12,8 +12,6 @@ function Remove-Quotes {
 
 }
 
-$test1 = "'file.xlsx'"
-
 # Get listing of working directory
 $files = Get-ChildItem -Name
 
