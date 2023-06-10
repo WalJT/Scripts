@@ -3,3 +3,4 @@ set -e
 
 rsync -aH --progress --delete /run/media/$USER/Backup_Drive/DataHoard/Pictures/ $HOME/Pictures/
 rsync -aH --progress --delete /run/media/$USER/Backup_Drive/DataHoard/Music/ $HOME/
+sync
