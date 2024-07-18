@@ -6,4 +6,10 @@
 # 4. GUI with file pickers?
 
 
-Compress-Archive -Path .\Test\ -DestinationPath .\test.zip 
+$sourceFolder = Read-Host "Enter folder to back up: "
+$destinationFolder = Read-Host "Enter folder to store backup archive: "
+$archiveBaseName = Read-Host "Enter a name for the archive: "
+$today = Get-Date -Format "yyyy-MM-dd"
+$archiveFile = $destinationFolder + $archiveBaseName + "_" + $today + ".zip"
+
+Compress-Archive -Path $sourceFolder -DestinationPath $archiveFile
