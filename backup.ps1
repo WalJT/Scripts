@@ -1,8 +1,6 @@
 
 # Todo:
-# 1. Get input for source folder
-# 2. Get input for destination path (not archive name)
-# 3. Get input for root of file name + append date
+# 5. Use 7zip CLI
 # 4. GUI with file pickers?
 
 
