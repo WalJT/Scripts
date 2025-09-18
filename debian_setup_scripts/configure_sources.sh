@@ -7,16 +7,16 @@
 set -e
 
 cat > /etc/apt/sources.list << EOF
-deb http://deb.debian.org/debian/ bookworm main non-free-firmware contrib non-free
-deb-src http://deb.debian.org/debian/ bookworm main non-free-firmware contrib non-free
+deb http://deb.debian.org/debian/ trixie main non-free-firmware contrib non-free
+deb-src http://deb.debian.org/debian/ trixie main non-free-firmware contrib non-free
 
-deb http://security.debian.org/debian-security bookworm-security main non-free-firmware contrib non-free
-deb-src http://security.debian.org/debian-security bookworm-security main non-free-firmware contrib non-free
+deb http://security.debian.org/debian-security trixie-security main non-free-firmware contrib non-free
+deb-src http://security.debian.org/debian-security trixie-security main non-free-firmware contrib non-free
 
-# bookworm-updates, to get updates before a point release is made;
+# trixie-updates, to get updates before a point release is made;
 # see https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backports
-deb http://deb.debian.org/debian/ bookworm-updates main non-free-firmware contrib non-free
-deb-src http://deb.debian.org/debian/ bookworm-updates main non-free-firmware contrib non-free
+deb http://deb.debian.org/debian/ trixie-updates main non-free-firmware contrib non-free
+deb-src http://deb.debian.org/debian/ trixie-updates main non-free-firmware contrib non-free
 EOF
 
 # Perform first system update
