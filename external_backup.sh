@@ -3,14 +3,13 @@
 set -e
 
 # Source directory
-src_dir="/var/mnt/InternalHDD"
+src_dir="/mnt/InternalHDD/"
 
 # Destination directories
-dest_dir1="/run/media/jules/BD1/Backup"
-dest_dir2="/run/media/jules/BD2/Backup"
-
-# Folders to back up
-folders=("Music" "Music (Archived)" "Photos")
+dest_dir1="/media/jules/BD1/Backup"
+dest_dir2="/media/jules/BD2/Backup"
+dest_dir3="/media/jules/BD3/Backup"
+dest_dir4="/media/jules/BD4/Backup"
 
 # Function to perform the rsync backup
 backup() {
@@ -21,13 +20,9 @@ backup() {
 }
 
 # Create backup directories if they don't exist
-mkdir -p "$dest_dir1" "$dest_dir2"
+mkdir -p "$dest_dir1" "$dest_dir2" "$dest_dir3" "$dest_dir4"
 
-# Loop through each folder and back it up to both drives
-for folder in "${folders[@]}"; do
-    src_folder="$src_dir/$folder"
-    backup "$src_folder" "$dest_dir1/$folder"
-    backup "$src_folder" "$dest_dir2/$folder"
-done
-
-sync
+backup "$src_dir" "$dest_dir1"
+backup "$src_dir" "$dest_dir2"
+backup "$src_dir" "$dest_dir3"
+backup "$src_dir" "$dest_dir4"
