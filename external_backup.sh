@@ -6,10 +6,10 @@ set -e
 src_dir="/mnt/InternalHDD/"
 
 # Destination directories
-dest_dir1="/media/jules/BD1/Backup"
-dest_dir2="/media/jules/BD2/Backup"
-dest_dir3="/media/jules/BD3/Backup"
-dest_dir4="/media/jules/BD4/Backup"
+dest_dir1="/run/media/jules/BD1/Backup"
+dest_dir2="/run/media/jules/BD2/Backup"
+dest_dir3="/run/media/jules/BD3/Backup"
+dest_dir4="/run/media/jules/BD4/Backup"
 
 # Function to perform the rsync backup
 backup() {
