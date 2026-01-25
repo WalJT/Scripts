@@ -4,7 +4,7 @@ set nowrap
 call plug#begin()
 Plug 'folke/snacks.nvim'
 Plug 'preservim/nerdtree'
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'morhetz/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'brianhuster/live-preview.nvim'
@@ -17,7 +17,7 @@ lua << END
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'horizon',
+    theme = 'gruvbox',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
@@ -73,4 +73,4 @@ END
 set list
 set listchars=tab:>.
 
-colorscheme twilight256
+colorscheme gruvbox
