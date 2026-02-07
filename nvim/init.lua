@@ -15,6 +15,3 @@ require("config.lazy")
 
 -- Configure telescope
 require("config.telescope")
-
--- Configure treesitter
-require("config.treesitter")
