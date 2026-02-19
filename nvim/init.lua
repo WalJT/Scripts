@@ -15,3 +15,7 @@ require("config.lazy")
 
 -- Configure telescope
 require("config.telescope")
+
+-- Configure Lualine
+require("config.lualine")
+vim.o.cmdheight = 0
