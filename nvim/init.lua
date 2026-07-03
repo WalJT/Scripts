@@ -4,6 +4,7 @@ num_tabs = 2
 
 -- Basic Vim options
 vim.o.relativenumber = true
+vim.o.number = true
 vim.o.wrap = false
 vim.o.expandtab = true
 vim.o.tabstop = num_tabs
