@@ -15,6 +15,7 @@ vim.g.mapleader = " "
 vim.pack.add({
 --  'https://github.com/rebelot/kanagawa.nvim',
   { src = 'https://github.com/nvim-mini/mini.nvim', version = 'stable' },
+  { src = 'https://github.com/brianhuster/live-preview.nvim' }
 
 })
 
