@@ -25,7 +25,8 @@ vim.pack.add({
 vim.cmd([[colorscheme kanagawa-dragon]])
 
 -- mini.pick file picker
-require('mini.pick').setup({})
+require('mini.pick').setup()
+require('mini.icons').setup()
 
 -- Configure Lualine
 require('lualine').setup()
