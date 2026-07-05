@@ -12,23 +12,21 @@ vim.o.softtabstop = num_tabs
 vim.o.shiftwidth = num_tabs
 vim.g.mapleader = " "
 
-
--- Plugins
 vim.pack.add({
-  'https://github.com/rebelot/kanagawa.nvim',
-  'https://github.com/nvim-lualine/lualine.nvim',
+--  'https://github.com/rebelot/kanagawa.nvim',
   { src = 'https://github.com/nvim-mini/mini.nvim', version = 'stable' },
 
 })
 
--- Set theme
-vim.cmd([[colorscheme kanagawa-dragon]])
-
--- mini.pick file picker
-require('mini.pick').setup()
+-- Load components of mini.nvim that I use
 require('mini.icons').setup()
+require('mini.git').setup()
+require('mini.pick').setup()
+require('mini.statusline').setup()
 
--- Configure Lualine
-require('lualine').setup()
-vim.o.cmdheight = 0
+
+-- leader + ff -> mini.pick
+vim.keymap.set("n", "<leader>ff", function()
+  vim.cmd("Pick files")
+end, { desc = "Pick files (mini.pick)" })
 
